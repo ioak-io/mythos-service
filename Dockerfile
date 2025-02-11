@@ -5,5 +5,5 @@ COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "aihub-*.tgz
 RUN npm install --production --silent
 COPY . .
 COPY public.pem /usr/src/app/public.pem
-EXPOSE 8125
+EXPOSE 8015
 CMD ["npm", "start"]
