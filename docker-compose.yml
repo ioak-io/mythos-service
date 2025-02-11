@@ -1,0 +1,29 @@
+version: "3.4"
+
+services:
+  mythosservice:
+    image: mythosservice
+    container_name: mythosservice
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://mongo.docker:27017
+      ONEAUTH_API: https://api.ioak.io:8010/api
+      ONEAUTH_API_KEY: fc2076f5-bee6-4b94-974f-5e110495b048
+      ONEAUTH_REALM_ID: 219
+      DODO_URL: https://api.ioak.io:8120
+      DODO_KEY: a53dc337-a203-4980-bfc8-12f19acddd26
+      PORT: 8125
+    ports:
+      - 8125:8125
+    networks:
+      ioak-net:
+        aliases:
+          - mythosservice.docker
+
+networks:
+  ioak-net:
+    external: true
