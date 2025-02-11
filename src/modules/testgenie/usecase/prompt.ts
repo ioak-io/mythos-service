@@ -5,7 +5,7 @@ const _MODEL_NAME_GEMINI = "gemini-1.5-flash";
 const _MODEL_NAME = _MODEL_NAME_GEMINI;
 
 
-const _TESTGENIE_PROMPT = {
+const _MYTHOS_PROMPT = {
   model: _MODEL_NAME,
   contents: [
     {
@@ -27,7 +27,7 @@ const _TESTGENIE_PROMPT = {
 };
 
 export const getUseCaseGenPrompt = (data: string) => {
-  const testGeniePrompt = cloneDeep(_TESTGENIE_PROMPT);
+  const testGeniePrompt = cloneDeep(_MYTHOS_PROMPT);
   testGeniePrompt.contents[1].parts[0].text = Handlebars.compile(
     testGeniePrompt.contents[1].parts[0].text
   )({ description: data, modelName: _MODEL_NAME });
