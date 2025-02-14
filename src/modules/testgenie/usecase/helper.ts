@@ -29,7 +29,7 @@ export const generateUsecase = async (
         usecaseSchema
     )
     response_list.forEach((usecase: any) => {
-        const body = { applicationId: applicationid, requirementId: requirementid, overview: usecase.overview, label: usecase.label, description: usecase.description };
+        const body = { applicationId: applicationid, requirementId: requirementid, title:usecase.title, description: usecase.description };
         usecaseModel.create(body);
     });
 
@@ -61,7 +61,7 @@ export const createUsecase = async (
         usecaseCollection,
         usecaseSchema
     );
-    const body = { applicationId: applicationid, requirementId: requirementid, overview: data.overview, label: data.label, description: data.description };
+    const body = { applicationId: applicationid, requirementId: requirementid, title:data.title, description: data.description };
     const created = await model.create(body);
     return created;
 };
