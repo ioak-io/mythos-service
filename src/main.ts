@@ -89,6 +89,23 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", ApiRoute);
 
+app.use((req:any, res:any, next:any) => {
+  if (req.path === '/api/webhook') {
+    next(); 
+  } else {
+    express.json({ limit: '5mb' })(req, res, next);
+  }
+});
+
+app.use((req:any, res:any, next:any) => {
+  if (req.path === '/api/webhook') {
+    next(); 
+  } else {
+    express.urlencoded({ extended: true })(req, res, next);
+  }
+});
+
+
 app.use((req: any, res: any) => {
   res.status(404).send("Not found");
 });

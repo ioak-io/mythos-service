@@ -25,4 +25,5 @@ require("./modules/resumeScreener/route")(router);
 require("./modules/testgenie/usecase/route")(router);;
 require("./modules/testgenie/testcase/route")(router);
 require("./modules/testgenie/preference/route")(router);
+require("./modules/webhook/webhook")(router);
 module.exports = router;
