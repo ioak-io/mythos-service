@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const {SLACK_WEBHOOK_URL} = require('../../../env.js');
-console.log(SLACK_WEBHOOK_URL);
 
 module.exports = function(router:any){
     router.post('/send-message', async (req:any, res:any) => {
