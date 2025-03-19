@@ -26,4 +26,5 @@ require("./modules/testgenie/usecase/route")(router);;
 require("./modules/testgenie/testcase/route")(router);
 require("./modules/testgenie/preference/route")(router);
 require("./modules/webhook/webhook")(router);
+require("./modules/webhook/slack_webhook")(router);
 module.exports = router;
