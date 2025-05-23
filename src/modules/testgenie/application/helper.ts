@@ -3,15 +3,18 @@ import {
   applicationCollection,
   applicationSchema,
 } from "./model";
+import { applicationSpec } from "../../domain/definitions/app.spec";
+import { getSpecByName } from "../../domain/specs/specRegistry";
+
     
-export const getAllApp = async (space:string) => {
-  const model = getCollection(
-    space,
-    applicationCollection,
-    applicationSchema
-  );
-  return await model.find({});
-};
+// export const getAllApp = async (space:string) => {
+//   const model = getCollection(
+//     space,
+//     applicationCollection,
+//     applicationSchema
+//   );
+//   return await model.find({});
+// };
 
 export const createApp = async (space: string, data: any) => {
   const model = getCollection(
@@ -70,4 +73,11 @@ export const updateAppById = async (
     },
   );
   return updatedDocument;
+};
+
+
+export const getAllApp = async (domain:string) => {
+  const collection = getSpecByName(domain);
+  console.log('collection', collection);
+  return await collection?.fields.name;
 };

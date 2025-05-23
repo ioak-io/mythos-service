@@ -17,5 +17,11 @@ export interface WebhookVerificationOptions {
 
 export interface WebhookEvent {
     type: string;
-    data: any;
+    data: {
+        id: number;
+        name: string;
+        [key: string]: any;
+    };
 }
+
+
