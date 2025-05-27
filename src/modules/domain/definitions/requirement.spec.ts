@@ -2,11 +2,22 @@ import { SpecDefinition } from "../specs/types/spec.types";
 
 export const requirementSpec: SpecDefinition = {
   fields:{
-    applicationId:{
+    reference:{
+      type: "string",
+    },
+    application: {
       type: "string",
       required: true,
+      parent: {
+        domain: "application",
+        field: "reference"
+      },
+      displayOptions:{
+        type: "autocomplete",
+        label: "Application",
+      }
     },
-    name: {
+    description: {
       type: "string",
       required: true,
       displayOptions:{

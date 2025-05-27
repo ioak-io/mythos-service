@@ -33,7 +33,7 @@ module.exports = function (router: any) {
   router
     .route("/:space/:domain")
     .get( transformDomain, getMeta)
-    .post( authorizeApi, transformDomain, create);
+    .post( transformDomain, create);
 
   router
     .route("/:space/:domain/:reference")

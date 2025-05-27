@@ -8,7 +8,8 @@
     "build:local": "webpack --config webpack.development.js",
     "start:local": "nodemon dist/server",
     "build": "webpack --config webpack.production.js",
-    "start": "node dist/server"
+    "start": "node dist/server",
+    "dev": "nodemon -e ts --exec \"echo Running file: \\\"src/main.ts\\\"\" src/main.ts"
   },
   "keywords": [],
   "author": "",

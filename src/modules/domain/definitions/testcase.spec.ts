@@ -2,17 +2,20 @@ import { SpecDefinition } from "../specs/types/spec.types";
 
 export const testcaseSpec: SpecDefinition = {
   fields:{
-    applicationId: {
+    reference: {
+      type: "string"
+    },
+    usecase: {
       type: "string",
       required: true,
-    },
-    requirementId: {
-        type: "string",
-        required: true
-    },
-    usecaseId: {
-        type: "string",
-        required: true
+      parent: {
+        domain: "usecase",
+        field: "reference"
+      },
+      displayOptions:{
+        type: "autocomplete",
+        label: "Usecase",
+      }
     },
     description:{
       type: "object",
