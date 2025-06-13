@@ -8,13 +8,15 @@
     "build:local": "webpack --config webpack.development.js",
     "start:local": "nodemon dist/server",
     "build": "webpack --config webpack.production.js",
-    "start": "node dist/server"
+    "start": "node dist/server",
+    "dev": "nodemon -e ts --exec \"echo Running file: \\\"src/main.ts\\\"\" src/main.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
+    "@octokit/webhooks": "^13.7.4",
     "@types/lodash": "^4.14.202",
     "@types/papaparse": "^5.3.14",
     "@types/pdf-parse": "^1.1.4",
@@ -40,9 +42,11 @@
     "moment": "^2.30.1",
     "mongoose": "^8.0.3",
     "multer": "^1.4.5-lts.1",
+    "nanoid": "^5.1.5",
     "papaparse": "^5.3.14",
     "pdf-parse": "^1.1.1",
     "requests": "^0.3.0",
+    "standardwebhooks": "^1.0.0",
     "tesseract.js": "^4.1.1",
     "uuid": "^9.0.1"
   },
@@ -54,6 +58,7 @@
     "@types/json2csv": "^5.0.7",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/multer": "^1.4.12",
+    "@types/node": "^22.13.10",
     "@types/pdf-parse": "^1.1.4",
     "@types/uuid": "^9.0.7",
     "@types/webpack-env": "^1.18.4",

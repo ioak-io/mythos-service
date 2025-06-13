@@ -55,3 +55,15 @@ export function htmlToText(str?: string | null) {
   str = str.toString();
   return str.replace(/(<([^>]+)>)/gi, '');
 }
+
+export const normalizeLabel = (input: string) => {
+  if (input == null) return '';
+  return input
+    .toLowerCase()                        // 1. Lowercase
+    .normalize('NFD')                     // 2. Normalize Unicode accents
+    .replace(/[\u0300-\u036f]/g, '')      //    Remove accents
+    .replace(/[^a-z0-9\s-]/g, '')         // 3. Remove special characters (keep letters, numbers, space, hyphen)
+    .trim()                               // 4. Trim leading/trailing whitespace
+    .replace(/\s+/g, '-')                 // 5. Replace spaces with hyphens
+    .replace(/-+/g, '-');                 // 6. Collapse multiple hyphens into one
+}
