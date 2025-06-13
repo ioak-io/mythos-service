@@ -5,6 +5,6 @@ import {
 } from "./service";
 
 module.exports = function (router: any) {
-  router.post("/:space/:domain/:reference/generate", generateUsecase);
+  router.post("/:space/:domain/:requirement/generate", generateUsecase);
   router.delete("/:space/:domain", deleteUsecases);
 };

@@ -14,5 +14,17 @@ export const applicationSpec: SpecDefinition = {
         placeholder: "Application Name"
       }
     }
+  },
+  meta:{
+    children: [
+      {
+        domain: "requirement",
+        field: {
+          parent: "reference",
+          child: "application"
+        },
+        cascadeDelete: true
+      }
+    ]
   }
 };

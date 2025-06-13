@@ -1,5 +1,8 @@
 
 import { applicationSpec } from "../definitions/app.spec";
+import { fragmentSpec } from "../definitions/fragment.spec";
+import { fragmentLabelSpec } from "../definitions/fragmentLabel.spec";
+import { fragmentVersionSpec } from "../definitions/fragmentVersion.spec";
 import { requirementSpec } from "../definitions/requirement.spec";
 import { testcaseSpec } from "../definitions/testcase.spec";
 import { usecaseSpec } from "../definitions/usecase.spec";
@@ -12,7 +15,10 @@ const specRegistry: Record<string, SpecDefinition> = {
     application: applicationSpec,
     requirement: requirementSpec,
     usecase: usecaseSpec,
-    testcase: testcaseSpec
+    testcase: testcaseSpec,
+    fragment: fragmentSpec,
+    fragmentVersion: fragmentVersionSpec,
+    fragmentLabel: fragmentLabelSpec,
 };
 
 // Export a function to get spec by domain name

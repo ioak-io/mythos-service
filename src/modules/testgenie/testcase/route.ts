@@ -5,6 +5,6 @@ import{
 } from "./service";
 
 module.exports= function(router:any) {
-    router.post("/:space/testcase/:reference/generate", generateTestcase );
+    router.post("/:space/:reference/generate/testcase", generateTestcase );
     router.delete("/:space/:domain/:usecaseId/testcase", deleteTestcasesByUsecase);
 };

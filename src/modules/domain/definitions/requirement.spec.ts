@@ -1,8 +1,8 @@
 import { SpecDefinition } from "../specs/types/spec.types";
 
 export const requirementSpec: SpecDefinition = {
-  fields:{
-    reference:{
+  fields: {
+    reference: {
       type: "string",
     },
     application: {
@@ -12,7 +12,7 @@ export const requirementSpec: SpecDefinition = {
         domain: "application",
         field: "reference"
       },
-      displayOptions:{
+      displayOptions: {
         type: "autocomplete",
         label: "Application",
       }
@@ -20,11 +20,23 @@ export const requirementSpec: SpecDefinition = {
     description: {
       type: "string",
       required: true,
-      displayOptions:{
+      displayOptions: {
         type: "text",
         label: "Description",
         placeholder: "Requirement Description"
       }
     }
+  },
+  meta: {
+    children: [
+      {
+        domain: "usecase",
+        field: {
+          parent: "reference",
+          child: "requirement"
+        },
+        cascadeDelete: true
+      }
+    ]
   }
 };

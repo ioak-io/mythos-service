@@ -35,5 +35,17 @@ export const usecaseSpec: SpecDefinition = {
         placeholder: "Usecase Description"
       }
     }
+  },
+  meta:{
+    children: [
+      {
+        domain: "testcase",
+        field: {
+          parent: "reference",
+          child: "usecase"
+        },
+        cascadeDelete: true
+      }
+    ]
   }
 };

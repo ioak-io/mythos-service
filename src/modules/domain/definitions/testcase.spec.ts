@@ -42,7 +42,6 @@ export const testcaseSpec: SpecDefinition = {
     },
     summary: {
       type: "string",
-      required: true,
     },
     priority:{
       type: "string",
@@ -54,11 +53,9 @@ export const testcaseSpec: SpecDefinition = {
     },
     components:{
       type: "string",
-      required: true,
     },
     label:{
       type: "string",
-      required: true,
     }
   }
 };

@@ -3,7 +3,7 @@ import * as Helper from "./helper";
 export const generateUsecase = async (req: any, res: any) => {
     const domain = req.params.domain;
     const space = req.params.space;
-    const reference = req.params.reference;
+    const reference = req.params.requirement;
     const response: any = await Helper.generateUsecase(domain, space, reference);
     res.status(200);
     res.send(response);
